@@ -25,14 +25,13 @@ namespace Employeef
             InitializeComponent();                    
         }
 
-        private async void btnGetall_Click(object sender, EventArgs e)
-        {
-            //var response= await resthelper.GetAll();
+        private async void btnGetall_Click(object sender, EventArgs e)//Get all employee info
+        {         
             var response = await resthelper.Getnamebypage(txtpage.Text);
             txtresponse.Text = resthelper.BeautifyJson(response);
         }
 
-        private async void btnget_Click(object sender, EventArgs e)
+        private async void btnget_Click(object sender, EventArgs e)//Search using ID
         {
             if (txtID.Text != "")
             {
@@ -46,7 +45,7 @@ namespace Employeef
 
         }
 
-        private async void btndel_Click(object sender, EventArgs e)
+        private async void btndel_Click(object sender, EventArgs e)//Delete Employee using Id
         {
             if (txtdel.Text != "")
             {
@@ -58,8 +57,6 @@ namespace Employeef
                 txtresponse.Text = "Please enter ID";
             }
 
-
-            // txtresponse.Text = resthelper.BeautifyJson(response);
         }
         public static async Task<string> Delete(string id)
         {
@@ -68,7 +65,7 @@ namespace Employeef
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(
                   new MediaTypeWithQualityHeaderValue("application/json"));                  
-                client.DefaultRequestHeaders.Add("Authorization", "Bearer 92f08ad240d8a4e6e9d2655edd0d40e8ac55b8bd8f716a797c8023b0c30ac5b0");
+                client.DefaultRequestHeaders.Add("Authorization", token);
                
                 using (HttpResponseMessage res = await client.DeleteAsync("https://gorest.co.in/public/v2/users" + "/" + id))
                 {
@@ -88,12 +85,12 @@ namespace Employeef
 
         }
 
-        private async void Postbtn_Click(object sender, EventArgs e)
+        private async void Postbtn_Click(object sender, EventArgs e)//Create new employee
         {
             if (postname.Text != "")
             {
                 var response = await resthelper.Post(postname.Text, postemail.Text, postgen.Text, poststa.Text);
-                //txtresponse.Text = response;
+              
                 txtresponse.Text = resthelper.BeautifyJson(response);
             }
             else
@@ -103,14 +100,14 @@ namespace Employeef
      
         }
 
-        private async void btnput_Click(object sender, EventArgs e)
+        private async void btnput_Click(object sender, EventArgs e)//update dat using ID
         {
             var response = await resthelper.Put(txtID.Text,postname.Text, postemail.Text, postgen.Text, poststa.Text);
-            //txtresponse.Text = response;
+           
             txtresponse.Text = resthelper.BeautifyJson(response);
 
         }
-        private async void btnGetname_Click(object sender, EventArgs e)
+        private async void btnGetname_Click(object sender, EventArgs e)//Search using name
         {
 
             //var response = await resthelper.Getname(txtGname.Text);
@@ -127,16 +124,17 @@ namespace Employeef
         }
         private void label3_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Please select appropriate operation");
         }
 
         private async void btnexp_Click(object sender, EventArgs e)
         {
             var response = await resthelper.Exportd();
-           // txtresponse.Text = resthelper.BeautifyJson(response);
+            MessageBox.Show("Under Maintainance for data formatting");
+            // txtresponse.Text = resthelper.BeautifyJson(response);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)//Closing application
         {
             this.Close();
         }

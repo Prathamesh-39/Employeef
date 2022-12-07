@@ -229,9 +229,9 @@ namespace Employeef
             // 
             // btnexp
             // 
-            this.btnexp.Location = new System.Drawing.Point(1016, 526);
+            this.btnexp.Location = new System.Drawing.Point(970, 516);
             this.btnexp.Name = "btnexp";
-            this.btnexp.Size = new System.Drawing.Size(75, 23);
+            this.btnexp.Size = new System.Drawing.Size(98, 23);
             this.btnexp.TabIndex = 20;
             this.btnexp.Text = "Export_test";
             this.btnexp.UseVisualStyleBackColor = true;
