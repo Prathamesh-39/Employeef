@@ -99,9 +99,9 @@ namespace Employeef
             // 
             this.Postbtn.Location = new System.Drawing.Point(730, 167);
             this.Postbtn.Name = "Postbtn";
-            this.Postbtn.Size = new System.Drawing.Size(75, 30);
+            this.Postbtn.Size = new System.Drawing.Size(75, 42);
             this.Postbtn.TabIndex = 4;
-            this.Postbtn.Text = "Post";
+            this.Postbtn.Text = "Create (New)";
             this.Postbtn.UseVisualStyleBackColor = true;
             this.Postbtn.Click += new System.EventHandler(this.Postbtn_Click);
             // 
@@ -229,9 +229,9 @@ namespace Employeef
             // 
             // btnexp
             // 
-            this.btnexp.Location = new System.Drawing.Point(970, 516);
+            this.btnexp.Location = new System.Drawing.Point(957, 508);
             this.btnexp.Name = "btnexp";
-            this.btnexp.Size = new System.Drawing.Size(98, 23);
+            this.btnexp.Size = new System.Drawing.Size(111, 31);
             this.btnexp.TabIndex = 20;
             this.btnexp.Text = "Export_test";
             this.btnexp.UseVisualStyleBackColor = true;
